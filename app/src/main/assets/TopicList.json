@@ -1,0 +1,63 @@
+{
+    "topics": [
+        {
+             "id": 1,
+             "topic": "Oscars 2015",
+             "questions": [
+               {
+                 "question": "Who won the award for best supporting actor?",
+                 "correctAnswer": "JK Simmons for Whiplash",
+                 "incorrectAnswers": ["Robert Duvall for The Judge", "Ethan Hawke for Boyhood", "Edward Norton for Birdman", "Mark Ruffalo for Foxcatcher"]
+               },
+               {
+                 "question": "Who won the award for best supporting actress?",
+                 "correctAnswer": "Patricia Arquette for Boyhood",
+                 "incorrectAnswers": ["Laura Dern for Wild", "Keira Knightley for The Imitation Game", "Emma Stone for Birdman", "Meryl Streep for Into the Woods"]
+               },
+                {
+                 "question": "What won for best animated feature film?",
+                 "correctAnswer": "Big Hero 6",
+                 "incorrectAnswers": ["The Boxtrolls", "How to Train Your Dragon 2", "Song of the Sea", "The Lego Movie"]
+               },
+                {
+                 "question": "What won for best documentary feature?",
+                 "correctAnswer": "Citizenfour",
+                 "incorrectAnswers": ["Finding Vivian Maier", "Last Days in Vietnam", "The Salt of the Earth", "Virunga"]
+               },
+                {
+                 "question": "Who won for best original screenplay?",
+                 "correctAnswer": "Armando Bo for Birdman",
+                 "incorrectAnswers": ["Richard Linklater – Boyhood", "E Max Frye, Dan Futterman – Foxcatcher", "Wes Anderson, Hugo Guinness – The Grand Budapest Hotel", "Dan Gilroy – Nightcrawler"]
+               },
+                {
+                 "question": "Who won for best director?",
+                 "correctAnswer": "Alejandro González Iñárritu for Birdman",
+                 "incorrectAnswers": ["Richard Linklater for Boyhood", "Bennett Miller for Foxcatcher", "Wes Anderson for The Grand Budapest Hotel", "Morten Tyldum for The Imitation Game"]
+               },
+                {
+                 "question": "Who won for best actor?",
+                 "correctAnswer": "Eddie Redmayne for The Theory of Everything",
+                 "incorrectAnswers": ["Steve Carell for Foxcatcher", "Bradley Cooper for American Sniper", "Michael Keaton for Birdman", "Benedict Cumberbatch for The Imitation Game"]
+               }
+             ],
+             "relatedTopics": [2, 4, 7]
+           },
+        {
+          "id": 1,
+          "topic": "My Topic",
+          "questions": [
+            {
+              "question": "My Question",
+              "correctAnswer": "The answer",
+              "incorrectAnswers": ["one", "two", "three", "four"]
+            },
+            {
+              "question": "My Question",
+              "correctAnswer": "The answer",
+              "incorrectAnswers": ["one", "two", "three", "four"]
+            }
+          ],
+          "relatedTopics": [2, 4, 7]
+        }
+    ]
+}
