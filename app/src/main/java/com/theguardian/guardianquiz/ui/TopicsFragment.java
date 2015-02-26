@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.theguardian.guardianquiz.R;
 import com.theguardian.guardianquiz.model.TopicList;
-import com.theguardian.guardianquiz.service.QuizService;
+import com.theguardian.guardianquiz.managers.QuizManager;
 
 import java.io.IOException;
 
@@ -19,18 +19,15 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class TopicsFragment extends Fragment {
-    @InjectView(R.id.topic_list) RecyclerView topicRecyclerView;
+    @InjectView(R.id.topic_list)
+    RecyclerView topicRecyclerView;
 
     private TopicList topicList;
     private LinearLayoutManager layoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        try {
-            this.topicList = QuizService.getTopics(getActivity());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        this.topicList = QuizManager.getTopics();
         View rootView = inflater.inflate(R.layout.fragment_topic_list, container, false);
         ButterKnife.inject(this, rootView);
 

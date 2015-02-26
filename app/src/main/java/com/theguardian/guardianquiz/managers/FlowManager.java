@@ -1,6 +1,5 @@
-package com.theguardian.guardianquiz.service;
+package com.theguardian.guardianquiz.managers;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 

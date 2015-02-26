@@ -1,16 +1,12 @@
 package com.theguardian.guardianquiz.ui;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.theguardian.guardianquiz.R;
-import com.theguardian.guardianquiz.service.FlowManager;
+import com.theguardian.guardianquiz.managers.FlowManager;
 
 
 public class QuizActivity extends ActionBarActivity {
