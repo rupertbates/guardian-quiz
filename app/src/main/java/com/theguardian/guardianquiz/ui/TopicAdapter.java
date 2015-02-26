@@ -51,7 +51,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FlowManager.gotoQuiz(position);
+                FlowManager.gotoQuiz(position, 0);
             }
         });
 

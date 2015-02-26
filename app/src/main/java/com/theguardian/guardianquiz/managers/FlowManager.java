@@ -20,8 +20,8 @@ public class FlowManager {
                 .commit();
     }
 
-    public static void gotoQuiz(int position) {
-        QuizFragment fragment = QuizFragment.newInstance(position);
+    public static void gotoQuiz(int quizNumber, int questionNumber) {
+        QuizFragment fragment = QuizFragment.newInstance(quizNumber, questionNumber);
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left, R.anim.slide_from_left, R.anim.slide_to_right);
         ft.replace(R.id.container, fragment);

@@ -8,23 +8,27 @@ import android.widget.TextView;
 
 import com.theguardian.guardianquiz.ButtonBackgrounds;
 import com.theguardian.guardianquiz.R;
+import com.theguardian.guardianquiz.managers.FlowManager;
 import com.theguardian.guardianquiz.managers.TypefaceHelper;
 import com.theguardian.guardianquiz.model.Question;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder> implements View.OnClickListener {
+public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder> {
     private final List<String> answers;
     private final Question question;
-    private String selected;
+    private OnSelectionListener listener;
+    private int selected = -1;
 
-    @Override
-    public void onClick(View v) {
-        selected = ((TextView) v).getText().toString();
-        notifyDataSetChanged();
+    public interface OnSelectionListener{
+        public void onAnswerSelected();
     }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
@@ -33,14 +37,14 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
         public ViewHolder(TextView v) {
             super(v);
             textView = v;
-
         }
 
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public AnswerAdapter(Question question) {
+    public AnswerAdapter(Question question, OnSelectionListener listener) {
         this.question = question;
+        this.listener = listener;
         answers = new ArrayList<>(question.incorrectAnswers);
         answers.add(question.correctAnswer);
         Collections.shuffle(answers);
@@ -55,7 +59,6 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
                 .inflate(R.layout.answer_text_view, parent, false);
 
         v.setTypeface(TypefaceHelper.getEgyptBold());
-        v.setOnClickListener(this);
         return new ViewHolder(v);
     }
 
@@ -64,11 +67,19 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, final int position) {
         String answer = answers.get(position);
         holder.textView.setText(answer);
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected = position;
+                listener.onAnswerSelected();
+                notifyDataSetChanged();
+            }
+        });
 
-        if (selected != null && question.correctAnswer.equals(answer))
-            holder.textView.setBackground(ButtonBackgrounds.correctAnswer());
-        else if (selected != null && selected.equals(answer))
-            holder.textView.setBackground(ButtonBackgrounds.incorrectAnswer());
+        if (selected != -1 && question.correctAnswer.equals(answer))
+            holder.textView.setBackgroundDrawable(ButtonBackgrounds.correctAnswer());
+        else if (selected != -1 && selected == position)
+            holder.textView.setBackgroundDrawable(ButtonBackgrounds.incorrectAnswer());
 
     }
 

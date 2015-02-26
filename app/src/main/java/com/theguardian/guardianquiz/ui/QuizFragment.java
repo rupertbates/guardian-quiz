@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.theguardian.guardianquiz.R;
+import com.theguardian.guardianquiz.managers.FlowManager;
 import com.theguardian.guardianquiz.managers.QuizManager;
 import com.theguardian.guardianquiz.managers.TypefaceHelper;
 import com.theguardian.guardianquiz.model.Question;
@@ -18,12 +19,17 @@ import com.theguardian.guardianquiz.model.QuizTopic;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class QuizFragment extends Fragment {
-    private static final String ARG_TOPIC_NUMBER = "param1";
+public class QuizFragment extends Fragment implements AnswerAdapter.OnSelectionListener {
+    private static final String ARG_TOPIC_NUMBER = "topicNumber";
+    private static final String ARG_QUESTION_NUMBER = "questionNumber";
+    private int questionNumber;
     private int topicNumber;
 
     @InjectView(R.id.question_text)
@@ -37,10 +43,11 @@ public class QuizFragment extends Fragment {
      *
      * @return A new instance of fragment QuizFragment.
      */
-    public static QuizFragment newInstance(int topicNumber) {
+    public static QuizFragment newInstance(int topicNumber, int questionNumber) {
         QuizFragment fragment = new QuizFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_TOPIC_NUMBER, topicNumber);
+        args.putInt(ARG_QUESTION_NUMBER, questionNumber);
         fragment.setArguments(args);
         return fragment;
     }
@@ -54,6 +61,7 @@ public class QuizFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             topicNumber = getArguments().getInt(ARG_TOPIC_NUMBER);
+            questionNumber = getArguments().getInt(ARG_QUESTION_NUMBER);
         }
     }
 
@@ -66,12 +74,22 @@ public class QuizFragment extends Fragment {
 
         questionText.setTypeface(TypefaceHelper.getEgyptBold());
         QuizTopic quiz = QuizManager.getTopics().topics.get(topicNumber);
-        Question question = quiz.questions.get(0);
+        Question question = quiz.questions.get(questionNumber);
         questionText.setText(question.question);
         answerList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        answerList.setAdapter(new AnswerAdapter(question));
+        answerList.setAdapter(new AnswerAdapter(question, this));
         return rootView;
 
     }
 
+    @Override
+    public void onAnswerSelected() {
+        Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
+            @Override
+            public void run() {
+                FlowManager.gotoQuiz(topicNumber, questionNumber + 1);
+            }
+        }, 2, TimeUnit.SECONDS);
+
+    }
 }
