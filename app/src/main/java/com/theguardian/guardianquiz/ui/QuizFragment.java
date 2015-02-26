@@ -69,10 +69,7 @@ public class QuizFragment extends Fragment {
         Question question = quiz.questions.get(0);
         questionText.setText(question.question);
         answerList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        List<String> answers = new ArrayList<>(question.incorrectAnswers);
-        answers.add(question.correctAnswer);
-        Collections.shuffle(answers);
-        answerList.setAdapter(new AnswerAdapter(answers));
+        answerList.setAdapter(new AnswerAdapter(question));
         return rootView;
 
     }

@@ -9,53 +9,66 @@ import android.widget.TextView;
 import com.theguardian.guardianquiz.ButtonBackgrounds;
 import com.theguardian.guardianquiz.R;
 import com.theguardian.guardianquiz.managers.TypefaceHelper;
+import com.theguardian.guardianquiz.model.Question;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder>{
+public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder> implements View.OnClickListener {
     private final List<String> answers;
+    private final Question question;
+    private String selected;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    @Override
+    public void onClick(View v) {
+        selected = ((TextView) v).getText().toString();
+        notifyDataSetChanged();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView textView;
 
         public ViewHolder(TextView v) {
             super(v);
             textView = v;
-            textView.setTypeface(TypefaceHelper.getEgyptBold());
-            textView.setOnClickListener(this);
+
         }
 
-        @Override
-        public void onClick(View v) {
-            textView.setBackgroundDrawable(ButtonBackgrounds.correctAnswer());
-        }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public AnswerAdapter(List<String> answers) {
-        this.answers = answers;
+    public AnswerAdapter(Question question) {
+        this.question = question;
+        answers = new ArrayList<>(question.incorrectAnswers);
+        answers.add(question.correctAnswer);
+        Collections.shuffle(answers);
     }
 
     // Create new views (invoked by the layout manager)
     @Override
     public AnswerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                      int viewType) {
+                                                       int viewType) {
         // create a new view
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.answer_text_view, parent, false);
 
-
+        v.setTypeface(TypefaceHelper.getEgyptBold());
+        v.setOnClickListener(this);
         return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.textView.setText(answers.get(position));
+        String answer = answers.get(position);
+        holder.textView.setText(answer);
 
+        if (selected != null && question.correctAnswer.equals(answer))
+            holder.textView.setBackground(ButtonBackgrounds.correctAnswer());
+        else if (selected != null && selected.equals(answer))
+            holder.textView.setBackground(ButtonBackgrounds.incorrectAnswer());
 
     }
 
