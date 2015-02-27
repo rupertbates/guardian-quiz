@@ -11,6 +11,7 @@ import com.theguardian.guardianquiz.R;
 public class TypefaceHelper {
 
     private static Typeface egyptBold;
+    private static Typeface egyptRegular;
 
     /**
      * Gets a font TypeFace corresponding to a font file
@@ -28,5 +29,12 @@ public class TypefaceHelper {
             egyptBold = getTypeface(R.string.egyde4med_font);
         }
         return egyptBold;
+    }
+
+    public static Typeface getEgyptRegular() {
+        if (egyptRegular == null) {
+            egyptRegular = getTypeface(R.string.egyde2lig_font);
+        }
+        return egyptRegular;
     }
 }

@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     tools:context="com.theguardian.guardianquiz.ui.QuizFragment">
 
-    <TextView
+    <com.theguardian.guardianquiz.ui.EgyptTextView
         style="@style/question_title_style"
         android:id="@+id/question_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/you_scored" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/answer_list"

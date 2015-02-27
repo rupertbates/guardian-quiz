@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">GuardianQuiz</string>
+    <string name="app_name">Quizitorial</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_quiz">QuizActivity</string>
     <string name="egyde4med_font">fonts/GdnEgyDE4Med.otf</string>
+    <string name="egyde2lig_font">fonts/GdnEgyDE2Lig.otf</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_scored">YOU SCORED</string>
 </resources>

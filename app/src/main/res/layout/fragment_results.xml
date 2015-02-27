@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.theguardian.guardianquiz.ui.QuizFragment">
+
+    <TextView
+        style="@style/padded"
+        android:textSize="20sp"
+        android:id="@+id/question_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/you_scored" />
+    <com.theguardian.guardianquiz.ui.EgyptTextView
+        style="@style/score_style"
+        android:id="@+id/score_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4/8" />
+    <com.theguardian.guardianquiz.ui.EgyptTextView
+        android:id="@+id/summary_text"
+        style="@style/results_title_style"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Well done you seem to know your stuff!" />
+    <com.theguardian.guardianquiz.ui.EgyptTextView
+        style="@style/results_title_style"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Want to keep track of your score and see how you did against others? Sign in or create an Guardian account" />
+
+</LinearLayout>

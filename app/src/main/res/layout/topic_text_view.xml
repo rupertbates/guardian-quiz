@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.theguardian.guardianquiz.ui.EgyptTextView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/topic_button_style"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</TextView>
+</com.theguardian.guardianquiz.ui.EgyptTextView>

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.theguardian.guardianquiz.R;
+import com.theguardian.guardianquiz.managers.QuizManager;
 import com.theguardian.guardianquiz.managers.TypefaceHelper;
 import com.theguardian.guardianquiz.model.TopicList;
 import com.theguardian.guardianquiz.managers.FlowManager;
@@ -21,7 +22,6 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         public ViewHolder(TextView v) {
             super(v);
             textView = v;
-            textView.setTypeface(TypefaceHelper.getEgyptBold());
         }
     }
 
@@ -51,7 +51,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FlowManager.gotoQuiz(position, 0);
+                QuizManager.startQuiz(position);
             }
         });
 

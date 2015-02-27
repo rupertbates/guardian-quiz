@@ -5,7 +5,11 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.theguardian.guardianquiz.R;
 import com.theguardian.guardianquiz.ui.QuizFragment;
+import com.theguardian.guardianquiz.ui.ResultsFragment;
 import com.theguardian.guardianquiz.ui.TopicsFragment;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class FlowManager {
     private static FragmentManager fragmentManager;
@@ -20,13 +24,35 @@ public class FlowManager {
                 .commit();
     }
 
-    public static void gotoQuiz(int quizNumber, int questionNumber) {
+    public static void gotoQuiz(final int quizNumber, final int questionNumber) {
         QuizFragment fragment = QuizFragment.newInstance(quizNumber, questionNumber);
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left, R.anim.slide_from_left, R.anim.slide_to_right);
         ft.replace(R.id.container, fragment);
         ft.addToBackStack(null);
         ft.commit();
+    }
 
+    public static void gotoQuizDelayed(final int quizNumber, final int questionNumber) {
+        Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
+            @Override
+            public void run() {
+                gotoQuiz(quizNumber, questionNumber);
+            }
+        }, 0, TimeUnit.SECONDS);
+    }
+
+    public static void gotoResults() {
+        Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
+            @Override
+            public void run() {
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left, R.anim.slide_from_left, R.anim.slide_to_right);
+                ft.replace(R.id.container, new ResultsFragment());
+                ft.addToBackStack(null);
+                ft.commit();
+
+            }
+        }, 2, TimeUnit.SECONDS);
     }
 }

@@ -72,7 +72,6 @@ public class QuizFragment extends Fragment implements AnswerAdapter.OnSelectionL
         View rootView = inflater.inflate(R.layout.fragment_quiz, container, false);
         ButterKnife.inject(this, rootView);
 
-        questionText.setTypeface(TypefaceHelper.getEgyptBold());
         QuizTopic quiz = QuizManager.getTopics().topics.get(topicNumber);
         Question question = quiz.questions.get(questionNumber);
         questionText.setText(question.question);
@@ -83,13 +82,8 @@ public class QuizFragment extends Fragment implements AnswerAdapter.OnSelectionL
     }
 
     @Override
-    public void onAnswerSelected() {
-        Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
-            @Override
-            public void run() {
-                FlowManager.gotoQuiz(topicNumber, questionNumber + 1);
-            }
-        }, 2, TimeUnit.SECONDS);
+    public void onAnswerSelected(final String answer) {
+        QuizManager.questionAnswered(questionNumber, answer);
 
     }
 }
