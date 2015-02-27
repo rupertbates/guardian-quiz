@@ -33,13 +33,13 @@ public class FlowManager {
         ft.commit();
     }
 
-    public static void gotoQuizDelayed(final int quizNumber, final int questionNumber) {
+    public static void gotoQuizDelayed(final int quizNumber, final int questionNumber, int delay) {
         Executors.newSingleThreadScheduledExecutor().schedule(new Runnable() {
             @Override
             public void run() {
                 gotoQuiz(quizNumber, questionNumber);
             }
-        }, 0, TimeUnit.SECONDS);
+        }, delay, TimeUnit.MILLISECONDS);
     }
 
     public static void gotoResults() {

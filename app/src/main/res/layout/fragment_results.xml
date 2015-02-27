@@ -1,35 +1,67 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.theguardian.guardianquiz.ui.QuizFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        style="@style/padded"
-        android:textSize="20sp"
-        android:id="@+id/question_text"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/you_scored" />
-    <com.theguardian.guardianquiz.ui.EgyptTextView
-        style="@style/score_style"
-        android:id="@+id/score_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="4/8" />
-    <com.theguardian.guardianquiz.ui.EgyptTextView
-        android:id="@+id/summary_text"
-        style="@style/results_title_style"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Well done you seem to know your stuff!" />
-    <com.theguardian.guardianquiz.ui.EgyptTextView
-        style="@style/results_title_style"
+        android:layout_height="match_parent"
+        tools:context="com.theguardian.guardianquiz.ui.QuizFragment">
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Want to keep track of your score and see how you did against others? Sign in or create an Guardian account" />
+        <TextView
+            style="@style/padded"
+            android:textSize="20sp"
+            android:id="@+id/question_text"
+            android:paddingTop="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/you_scored" />
 
-</LinearLayout>
+        <com.theguardian.guardianquiz.ui.EgyptTextView
+            style="@style/score_style"
+            android:id="@+id/score_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4/8" />
+
+        <com.theguardian.guardianquiz.ui.EgyptTextView
+            android:id="@+id/summary_text"
+            style="@style/results_title_style"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Well done you seem to know your stuff!" />
+
+        <com.theguardian.guardianquiz.ui.EgyptTextView
+            style="@style/results_title_style"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Want to keep track of your score and see how you did against others? Sign in or create an Guardian account" />
+
+        <Button
+            android:id="@+id/sign_in"
+            style="@style/result_page_button_style"
+            android:text="Sign in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/play_again"
+            style="@style/result_page_button_style"
+            android:text="Play again"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/new_topic"
+            style="@style/result_page_button_style"
+            android:text="New topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

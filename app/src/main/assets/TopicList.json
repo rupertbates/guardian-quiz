@@ -5,73 +5,48 @@
       "topic": "Oscars 2015",
       "questions": [
         {
-          "question": "Who won the award for best supporting actor?",
-          "correctAnswer": "JK Simmons for Whiplash",
+          "question": "The award for best original screenplay went to which film",
+          "correctAnswer": "Birdman",
           "incorrectAnswers": [
-            "Robert Duvall for The Judge",
-            "Ethan Hawke for Boyhood",
-            "Edward Norton for Birdman",
-            "Mark Ruffalo for Foxcatcher"
+            "Boyhood",
+            "Foxcatcher",
+            "The Grand Budapest Hotel"
           ]
         },
         {
-          "question": "Who won the award for best supporting actress?",
-          "correctAnswer": "Patricia Arquette for Boyhood",
+          "question": "Despite 6 nominations, American Sniper picked up just one award. In which category?",
+          "correctAnswer": "Best Sound Editing",
           "incorrectAnswers": [
-            "Laura Dern for Wild",
-            "Keira Knightley for The Imitation Game",
-            "Emma Stone for Birdman",
-            "Meryl Streep for Into the Woods"
+            "Best Adapted Screenplay",
+            "Best Visual Effects",
+            "Best Hair and Makeup"
           ]
         },
         {
-          "question": "What won for best animated feature film?",
-          "correctAnswer": "Big Hero 6",
+          "question": "Julianne Moore won Best Actress for her depiction of what medical condition?",
+          "correctAnswer": "Alzheimers",
           "incorrectAnswers": [
-            "The Boxtrolls",
-            "How to Train Your Dragon 2",
-            "Song of the Sea",
-            "The Lego Movie"
+            "Leukemia",
+            "Bi-polar disorder",
+            "Parkinsons disease"
           ]
         },
         {
-          "question": "What won for best documentary feature?",
-          "correctAnswer": "Citizenfour",
+          "question": "During the ceremony, Lady Gaga performed songs from which classic musical?",
+          "correctAnswer": "The Sound Of Music",
           "incorrectAnswers": [
-            "Finding Vivian Maier",
-            "Last Days in Vietnam",
-            "The Salt of the Earth",
-            "Virunga"
+            "Chicago",
+            "Bugsy Malone",
+            "Frozen"
           ]
         },
         {
-          "question": "Who won for best original screenplay?",
-          "correctAnswer": "Armando Bo for Birdman",
+          "question": "Host, Neil Patrick Harris, surprised the audience with what noteworthy outfit?",
+          "correctAnswer": "Just his underpants",
           "incorrectAnswers": [
-            "Richard Linklater – Boyhood",
-            "E Max Frye, Dan Futterman – Foxcatcher",
-            "Wes Anderson, Hugo Guinness – The Grand Budapest Hotel",
-            "Dan Gilroy – Nightcrawler"
-          ]
-        },
-        {
-          "question": "Who won for best director?",
-          "correctAnswer": "Alejandro González Iñárritu for Birdman",
-          "incorrectAnswers": [
-            "Richard Linklater for Boyhood",
-            "Bennett Miller for Foxcatcher",
-            "Wes Anderson for The Grand Budapest Hotel",
-            "Morten Tyldum for The Imitation Game"
-          ]
-        },
-        {
-          "question": "Who won for best actor?",
-          "correctAnswer": "Eddie Redmayne for The Theory of Everything",
-          "incorrectAnswers": [
-            "Steve Carell for Foxcatcher",
-            "Bradley Cooper for American Sniper",
-            "Michael Keaton for Birdman",
-            "Benedict Cumberbatch for The Imitation Game"
+            "A backless dress",
+            "A rabbit onesey",
+            "Medical Scrubs"
           ]
         }
       ],
@@ -87,12 +62,11 @@
       "synopsis": "Net migration to the UK is higher than when the coalition took office, shattering prime minister David Cameron’s ‘no ifs, no buts’ promise to cut the number. Learn more…",
       "questions": [
         {
-          "question": "In a speech to his party in April 2011, what did David Cameron promise his government would reduce net migration levels to?",
+          "question": "In April 2011, what did David Cameron promise his government would reduce net migration to?",
           "correctAnswer": "In the order of tens of thousands each year",
           "incorrectAnswers": [
             "Zero, absolute zero",
             "Less than 200,000",
-            "No more than forty or fifty thousand a year",
             "An acceptable level"
           ]
         },
@@ -102,43 +76,34 @@
           "incorrectAnswers": [
             "404,000",
             "155,000",
-            "233,000",
-            "700,000",
-            "80,000"
+            "1.4 million"
           ]
         },
         {
-          "question": "The latest net migration figures are the highest since which year?",
-          "correctAnswer": "2005",
+          "question": "Nigel Farage says UKIP would ban immigrants from entering the UK without what?",
+          "correctAnswer": "Health Insurance",
           "incorrectAnswers": [
-            "1946",
-            "1993",
-            "2010",
-            "2008",
-            "2001"
+            "A passport",
+            "A job",
+            "£20,000 savings"
           ]
         },
         {
-          "question": "Emigration has remained stable for the past two years - but at what level?",
-          "correctAnswer": "327,000",
+          "question": "According to the ONS what is the biggest reason for net migration to the UK?",
+          "correctAnswer": "Formal Education",
           "incorrectAnswers": [
-            "480,000",
-            "120,000",
-            "50,000",
-            "356,000",
-            "398,000"
+            "Joining family",
+            "Seeking work",
+            "Claiming benefits"
           ]
         },
         {
-          "question": "In 2014, what percentage of those coming to work in Britain came from within the EU?",
-          "correctAnswer": "57%",
+          "question": "Channels 4s new documentary series, Immigration Street, is set on which road?",
+          "correctAnswer": "Derby Road",
           "incorrectAnswers": [
-            "93%",
-            "79%",
-            "18%",
-            "44%",
-            "49%",
-            "62%"
+            "Romania Street",
+            "Whites Avenue",
+            "London Crescent"
           ],
           "relatedTopics": [
             2,
@@ -152,6 +117,174 @@
         4,
         7
       ]
-    }
+    },
+    {
+          "id": 1,
+          "topic": "Greek Bailout",
+          "questions": [
+            {
+              "question": "The award for best original screenplay went to which film",
+              "correctAnswer": "Birdman",
+              "incorrectAnswers": [
+                "Boyhood",
+                "Foxcatcher",
+                "The Grand Budapest Hotel"
+              ]
+            },
+            {
+              "question": "Despite 6 nominations, American Sniper picked up just one award. In which category?",
+              "correctAnswer": "Best Sound Editing",
+              "incorrectAnswers": [
+                "Best Adapted Screenplay",
+                "Best Visual Effects",
+                "Best Hair and Makeup"
+              ]
+            },
+            {
+              "question": "Julianne Moore won Best Actress for her depiction of what medical condition?",
+              "correctAnswer": "Alzheimers",
+              "incorrectAnswers": [
+                "Leukemia",
+                "Bi-polar disorder",
+                "Parkinsons disease"
+              ]
+            },
+            {
+              "question": "During the ceremony, Lady Gaga performed songs from which classic musical?",
+              "correctAnswer": "The Sound Of Music",
+              "incorrectAnswers": [
+                "Chicago",
+                "Bugsy Malone",
+                "Frozen"
+              ]
+            },
+            {
+              "question": "Host, Neil Patrick Harris, surprised the audience with what noteworthy outfit?",
+              "correctAnswer": "Just his underpants",
+              "incorrectAnswers": [
+                "A backless dress",
+                "A rabbit onesey",
+                "Medical Scrubs"
+              ]
+            }
+          ],
+          "relatedTopics": [
+            2,
+            4,
+            7
+          ]
+        },
+        {
+              "id": 1,
+              "topic": "Champions League",
+              "questions": [
+                {
+                  "question": "The award for best original screenplay went to which film",
+                  "correctAnswer": "Birdman",
+                  "incorrectAnswers": [
+                    "Boyhood",
+                    "Foxcatcher",
+                    "The Grand Budapest Hotel"
+                  ]
+                },
+                {
+                  "question": "Despite 6 nominations, American Sniper picked up just one award. In which category?",
+                  "correctAnswer": "Best Sound Editing",
+                  "incorrectAnswers": [
+                    "Best Adapted Screenplay",
+                    "Best Visual Effects",
+                    "Best Hair and Makeup"
+                  ]
+                },
+                {
+                  "question": "Julianne Moore won Best Actress for her depiction of what medical condition?",
+                  "correctAnswer": "Alzheimers",
+                  "incorrectAnswers": [
+                    "Leukemia",
+                    "Bi-polar disorder",
+                    "Parkinsons disease"
+                  ]
+                },
+                {
+                  "question": "During the ceremony, Lady Gaga performed songs from which classic musical?",
+                  "correctAnswer": "The Sound Of Music",
+                  "incorrectAnswers": [
+                    "Chicago",
+                    "Bugsy Malone",
+                    "Frozen"
+                  ]
+                },
+                {
+                  "question": "Host, Neil Patrick Harris, surprised the audience with what noteworthy outfit?",
+                  "correctAnswer": "Just his underpants",
+                  "incorrectAnswers": [
+                    "A backless dress",
+                    "A rabbit onesey",
+                    "Medical Scrubs"
+                  ]
+                }
+              ],
+              "relatedTopics": [
+                2,
+                4,
+                7
+              ]
+            },
+            {
+                  "id": 1,
+                  "topic": "Islamic State (Isis)",
+                  "questions": [
+                    {
+                      "question": "The award for best original screenplay went to which film",
+                      "correctAnswer": "Birdman",
+                      "incorrectAnswers": [
+                        "Boyhood",
+                        "Foxcatcher",
+                        "The Grand Budapest Hotel"
+                      ]
+                    },
+                    {
+                      "question": "Despite 6 nominations, American Sniper picked up just one award. In which category?",
+                      "correctAnswer": "Best Sound Editing",
+                      "incorrectAnswers": [
+                        "Best Adapted Screenplay",
+                        "Best Visual Effects",
+                        "Best Hair and Makeup"
+                      ]
+                    },
+                    {
+                      "question": "Julianne Moore won Best Actress for her depiction of what medical condition?",
+                      "correctAnswer": "Alzheimers",
+                      "incorrectAnswers": [
+                        "Leukemia",
+                        "Bi-polar disorder",
+                        "Parkinsons disease"
+                      ]
+                    },
+                    {
+                      "question": "During the ceremony, Lady Gaga performed songs from which classic musical?",
+                      "correctAnswer": "The Sound Of Music",
+                      "incorrectAnswers": [
+                        "Chicago",
+                        "Bugsy Malone",
+                        "Frozen"
+                      ]
+                    },
+                    {
+                      "question": "Host, Neil Patrick Harris, surprised the audience with what noteworthy outfit?",
+                      "correctAnswer": "Just his underpants",
+                      "incorrectAnswers": [
+                        "A backless dress",
+                        "A rabbit onesey",
+                        "Medical Scrubs"
+                      ]
+                    }
+                  ],
+                  "relatedTopics": [
+                    2,
+                    4,
+                    7
+                  ]
+                }
   ]
 }

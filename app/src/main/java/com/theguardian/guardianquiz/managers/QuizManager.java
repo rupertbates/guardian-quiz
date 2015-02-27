@@ -37,13 +37,17 @@ public class QuizManager {
 
     public static void questionAnswered(int questionNumber, String answer) {
         answers.put(questionNumber, answer);
-        if(questionNumber < currentQuiz.questions.size() - 1)
-            FlowManager.gotoQuizDelayed(currentQuizNumber, questionNumber + 1);
-        else
+        if (questionNumber < currentQuiz.questions.size() - 1) {
+            FlowManager.gotoQuizDelayed(currentQuizNumber, questionNumber + 1, questionIsCorrect(questionNumber, answer) ? 300 : 1000);
+        } else
             FlowManager.gotoResults();
     }
 
-    public static int getNumberOfCorrectAnswers(){
+    private static boolean questionIsCorrect(int questionNumber, String answer) {
+        return answer.equals(currentQuiz.questions.get(questionNumber).correctAnswer);
+    }
+
+    public static int getNumberOfCorrectAnswers() {
         int correct = 0;
         for (int i = 0; i < answers.size(); i++) {
             String answer = answers.get(i);
@@ -53,7 +57,11 @@ public class QuizManager {
         return correct;
     }
 
-    public static int getTotalNumberOfQuestions(){
+    public static int getTotalNumberOfQuestions() {
         return currentQuiz.questions.size();
+    }
+
+    public static void restartQuiz() {
+        startQuiz(currentQuizNumber);
     }
 }

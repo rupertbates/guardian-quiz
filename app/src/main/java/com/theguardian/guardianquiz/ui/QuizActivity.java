@@ -1,9 +1,11 @@
 package com.theguardian.guardianquiz.ui;
 
+import android.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.theguardian.guardianquiz.R;
 import com.theguardian.guardianquiz.managers.FlowManager;
@@ -15,6 +17,11 @@ public class QuizActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+//        View decorView = getWindow().getDecorView();
+//// Hide the status bar.
+//        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+//        decorView.setSystemUiVisibility(uiOptions);
+
         FlowManager.setFragmentManager(getSupportFragmentManager());
         FlowManager.gotoTopicList();
     }
